@@ -1,0 +1,24 @@
+{
+    "name": "vscode-snippets-ext-template",
+    "displayName": "vscode-snippets-ext-template",
+    "description": " A template project for create vscode snippets extension easily",
+    "version": "0.0.1",
+    "publisher": "banxi",
+    "engines": {
+        "vscode": "^1.14.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "node ./snippets-src/make_snippets.js"
+    }
+}
