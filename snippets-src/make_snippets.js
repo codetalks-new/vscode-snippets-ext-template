@@ -53,9 +53,16 @@ function ensureSnippetPrefix(snippet, key) {
   }
 }
 
+function ensureSnippetDescription(snippet) {
+  // simple body can be used as description,if there's no description
+  if (!snippet.hasOwnProperty("description")) {
+    snippet.description = snippet.body
+  }
+}
+
 function mergeSnippetOptions(snippet, options) {
   //  value in snippet should have high priority
-  const resultObj = options || {}
+  const resultObj =  Object.assign({}, options || {})
   Object.assign(resultObj, snippet)
   Object.assign(snippet, resultObj)
 }
@@ -75,6 +82,7 @@ function makeSnippets(name, folder, global_options) {
     }
     const snippet = data[key];
     ensureSnippetPrefix(snippet, key)
+    ensureSnippetDescription(snippet)
     includeSnippetBody(snippet, key, includesDir)
     if (global_options) {
       mergeSnippetOptions(snippet, global_options)
