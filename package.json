@@ -19,6 +19,7 @@
         ]
     },
     "scripts": {
-        "build": "node ./snippets-src/make_snippets.js"
+        "build": "node ./snippets-src/make_snippets.js",
+        "vscode:prepublish": "node ./snippets-src/make_snippets.js"
     }
 }
