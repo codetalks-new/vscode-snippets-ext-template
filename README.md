@@ -2,7 +2,7 @@
 This is a project will help you create your vscode snippets extensions easier and quicker.
 
 For example,you want to add a `forof` snippet for JavaScript.
-You only need to a an simple item in `snippets-src/snippets.json`,like this:
+You only need to add an simple item in `snippets-src/snippets.json`,like this:
 
 ```json
 {
@@ -33,6 +33,16 @@ Which can read/parse `snippets.json` file.
 Below is how we can call a `makeSnippets` function to make the configured snippets file
 
 `makeSnippets('snippets.json', 'js', { scope: "javascript,typescript" });`
+
+## Usage
+### for New snippets extensions
+just clone this repo and use as your base repo.
+
+### for Exists snippets extensions
+1. copy `snippets-src` folder to your project.
+2. copy all your `snippets.json` from `snippets` older into `snippets-src` folder.
+3. extrac your snippet code into new source file in a folder.
+4. edit the make_snippets.js as needed.
 
 
 
